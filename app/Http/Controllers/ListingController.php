@@ -21,7 +21,7 @@ class ListingController extends Controller
     public function index(){
         // listings/index.blade.php
         return view('listings.index', [
-            'listings' => Listing::latest() -> filter(request(['tag'])) -> get()
+            'listings' => Listing::latest() -> filter(request(['tag', 'search'])) -> get()
             ]);
     }
     //show single listing
