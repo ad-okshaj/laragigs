@@ -22,7 +22,7 @@ class ListingController extends Controller
     public function index(){
         // listings/index.blade.php
         return view('listings.index', [
-            'listings' => Listing::latest() -> filter(request(['tag', 'search'])) -> get()
+            'listings' => Listing::latest() -> filter(request(['tag', 'search'])) -> paginate(6)
             ]);
     }
     //show single listing
