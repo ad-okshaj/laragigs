@@ -12,7 +12,7 @@ class UserController extends Controller
     public function create() {
         return view('users.register');
     }
-
+ 
     // Create New User
     public function store(Request $request) {
         $formFields = $request->validate([
@@ -61,7 +61,7 @@ class UserController extends Controller
 
             return redirect('/')->with('message', 'You are now logged in!');
         }
-
+          // if login fails then: 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
     }
 }
